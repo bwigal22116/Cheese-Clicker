@@ -11,6 +11,7 @@
 <title>Cheese Clicker</title>
 <p class="counter" id="variable-value" style="font-family: Rockwell; text-align: center;"></p>
 <p class="counter" id="ClickBooster" style="font-family: Rockwell; text-align: center;"></p>
+<p class="counter" id="Admin-Panel" style="font-family: Rockwell; text-align: center;"></p>
 <br>
 <br>
 <!-- Img Show -->
@@ -26,6 +27,7 @@
   Cheese += ClickBoost; // Increment the pizza count
   localStorage.setItem('Cheese', Cheese);
   localStorage.setItem('ClickBoost', ClickBoost);
+  let AP = ""
   updateDisplay();
 }
   
@@ -42,8 +44,11 @@ function updateDisplay() {
 
 
   function Panel() {
-  
+  const AdminPanel = document.getElementById("Admin-Panel");
+  Admin-Panel.textContent = AP;
+    let AP = "Staff Admin Panel"
   }
+  
   </script>
   
 <style>
