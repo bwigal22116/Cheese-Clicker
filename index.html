@@ -18,6 +18,7 @@
  <img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()" class="bottom-image">
 <!-- Scripts -->
 <script>
+  
   function CheeseClicked() {
   const CheeseImg = document.querySelector('.img');
   setTimeout(() => {
@@ -27,10 +28,9 @@
   Cheese += ClickBoost; // Increment the pizza count
   localStorage.setItem('Cheese', Cheese);
   localStorage.setItem('ClickBoost', ClickBoost);
-  let AP = ""
   updateDisplay();
 }
-  
+let AP = "" 
 let Cheese = parseInt(localStorage.getItem('Cheese')) || 0; 
 let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1; 
   
