@@ -1,2 +1,14 @@
 <title>Cheese Clicker</title>
 
+<p class="counter" id="variable-value" style="font-family: Rockwell; text-align: center;"></p>
+<script>
+let Cheese = parseInt(localStorage.getItem('Cheese')) || 0; 
+let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 0; 
+  
+function updateDisplay() {
+  const displayElement = document.getElementById("variable-value");
+  displayElement.textContent = Cheese;
+}
+  updateDisplay()
+  </script>
+  
