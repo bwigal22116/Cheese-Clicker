@@ -41,3 +41,28 @@ function updateDisplay() {
   updateDisplay()
   </script>
   
+<style>
+  img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 275px;
+  height: auto;
+  transition: transform 0.2s ease-in-out; /* Add a transition for smooth animation */
+}
+
+img.clicked {
+  transform: scale(1.2); /* Scale the image up when clicked */
+}
+
+  .img {
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
+}
+
+.counter {
+  font-size: 60px;
+}
+</style>
