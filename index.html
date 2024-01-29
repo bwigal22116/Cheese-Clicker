@@ -2,7 +2,7 @@
 
 <p class="counter" id="variable-value" style="font-family: Rockwell; text-align: center;"></p>
 <br>
-<p class="counter" id="ClickBoost" style="font-family: Rockwell; text-align: center;"></p>
+<p class="counter" id="ClickBooster" style="font-family: Rockwell; text-align: center;"></p>
 <script>
 let Cheese = parseInt(localStorage.getItem('Cheese')) || 0; 
 let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 0; 
@@ -10,8 +10,8 @@ let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 0;
 function updateDisplay() {
   const displayElement = document.getElementById("variable-value");
   displayElement.textContent = Cheese;
-  const ClickBoost = document.getElementById("ClickBoost");
-  ClickBoost.textContent = "Click Boost: " + ClickBoost;
+  const ClickBooster = document.getElementById("ClickBooster");
+  ClickBooster.textContent = "Click Boost: " + ClickBoost;
 }
   updateDisplay()
   </script>
