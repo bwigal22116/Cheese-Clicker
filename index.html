@@ -5,7 +5,7 @@
 <p class="counter" id="Clicks-Boost" style="font-family: Rockwell; text-align: center;"></p>
 <br>
 <div class="container">
-  <img class="img" src="assets/IMG_3673-removebg-preview 2.png" onclick="PizzaClicked()" class="bottom-image">
+  <img class="img" src="assets/IMG_3673-removebg-preview 2.png" onclick="CheeseClicked()" class="bottom-image">
   <img class="upgrade-1" src="assets/Upgrade-1.png" onclick="Upgrade1()" class="upgrade-image">
 </div>
 
@@ -56,15 +56,15 @@ function updateDisplay() {
 updateDisplay(); // Initial display
 
 // When Pizza Clicked
-function PizzaClicked() {
-  const pizzaImg = document.querySelector('.img');
+function CheeseClicked() {
+  const PizzaImg = document.querySelector('.img');
 
 
   setTimeout(() => {
     pizzaImg.classList.remove('clicked'); // Remove the class after a short delay
   }, 300);
 
-  pizza += ClickPerPress; // Increment the pizza count
+  Cheese += ClickBoost; // Increment the pizza count
   localStorage.setItem('Cheese', Cheese);
   localStorage.setItem('ClickBoost', ClicksBoost);
   updateDisplay();
