@@ -27,6 +27,18 @@
   Cheese += ClickBoost; // Increment the pizza count
   localStorage.setItem('Cheese', Cheese);
   localStorage.setItem('ClickBoost', ClickBoost);
+    const img = document.querySelector('.img-2');
+const w = 3; // Number of seconds to wait before revealing the full image
+
+// Initially hide half of the image
+img.style.clipPath = 'inset(0 0 50% 0)'; // Hide the right half
+
+// Reveal the full image after w seconds
+setTimeout(() => {
+  img.style.clipPath = 'inset(0 0 0 0)'; // Show the full image
+}, w * 1000);
+
+    
   updateDisplay();
 }
 
