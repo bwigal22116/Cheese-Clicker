@@ -60,11 +60,12 @@ function updateDisplay() {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Centers the image within its container */
   width: 275px;
   height: auto;
-  transition: transform 0.2s ease-in-out; /* Add a transition for smooth animation */
+  transition: transform 0.2s ease-in-out; /* Retains the smooth animation */
 }
+
 
 img.clicked {
   transform: scale(1.2); /* Scale the image up when clicked */
