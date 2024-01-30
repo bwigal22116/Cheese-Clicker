@@ -31,7 +31,7 @@
   localStorage.setItem('ClickBoost', ClickBoost);
   updateDisplay();
 }
-let AP = "" 
+
 let Cheese = parseInt(localStorage.getItem('Cheese')) || 0; 
 let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1; 
   
@@ -40,17 +40,13 @@ function updateDisplay() {
   displayElement.textContent = Cheese;
   const ClickBooster = document.getElementById("ClickBooster");
   ClickBooster.textContent = "Click Boost: " + ClickBoost;
-  const AdminPanel = document.getElementById("AdminPanel");
-  AdminPanel.textContent = AP;
+  
   
 }
   updateDisplay();
 
 
-  function Panel() {
-     AP = "Staff Admin Panel redirecting.."
-    updateDisplay();
-  }
+  
   
   </script>
   
