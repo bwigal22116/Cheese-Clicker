@@ -15,7 +15,8 @@
 <br>
 <!-- Img Show -->
  <img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()" class="img-2">
-<img class="upgrade" src="assets/upgrade-1.png" onclick="Update1()" class="Upgrade">
+<img class="upgrade" src="assets/upgrade-1.png" onclick="Update1()" class="upgrade">
+
 <!-- Scripts -->
 <script>
   
@@ -46,14 +47,27 @@ function updateDisplay() {
 }
   updateDisplay();
 
+  
+const upgradeImg = document.querySelector('.upgrade'); // Assuming 'upgrade' is the img class
+
+upgradeImg.addEventListener('click', function handleClick() {
+  if (cheese >= 100) {
+    this.classList.add('hidden'); // Hides the image when cheese is 100 or more
+    ClickBoost++; // Increases ClickBoost by 1
+  } else {
+    alert("Not enough Cheese, keep on clickin!")
+    // Handle scenario where cheese is less than 100 (optional)
+    // You could display a message, disable the click, etc.
+  }
+});
 
   
   
   </script>
   
 <style>
-  .upgrade {
-
+  upgrade {
+   
   }
   body {
     background-color: #fffeb3;
