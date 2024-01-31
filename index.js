@@ -4,14 +4,14 @@ const Cheese = parseInt(localStorage.getItem('Cheese')) || 0;
 const ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
 let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
 
-function CheeseClicked() {
-  CheeseImg.classList.add('clicked');
-  setTimeout(() => CheeseImg.classList.remove('clicked'), 300);
+  function CheeseClicked() {
 
   Cheese += ClickBoost;
   localStorage.setItem('Cheese', Cheese);
-  updateDisplay();
+  updateDisplay(); // Add this line to update counters after clicking
 }
+
+
 
 function updateDisplay() {
   const displayElement = document.getElementById("variable-value");
