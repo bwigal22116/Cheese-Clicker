@@ -1,28 +1,29 @@
-body {
-  background-color: #fffeb3;
-}
-
-upgrade {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-img {
+  .upgrade {
+     position: absolute;
+    top: 0;
+    right: 0;
+  
+  }
+  body {
+    background-color: #fffeb3;
+  }
+  
+  img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Centers the image within its container */
   width: 275px;
   height: auto;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out; /* Retains the smooth animation */
 }
+
 
 img.clicked {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Scale the image up when clicked */
 }
 
-.img {
+  .img {
   margin: 0 auto;
   width: 300px;
   height: auto;
