@@ -1,44 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cheese Clicker</title>
-  
-</head>
-<body>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQKK6WYJNV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QQKK6WYJNV');
-  </script>
-
-  <p class="counter" id="variable-value" style="font-family: Rockwell; text-align: center;"></p>
-  <p class="counter" id="ClickBooster" style="font-family: Rockwell; text-align: center;"></p>
-  <br>
-  <br>
-  <img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()">
-  <img class="upgrade" src="assets/Upgrade-1.png" onclick="Upgrade1()" id="upgrade">
-</body>
-</html>
-<link rel="stylesheet" href="index.css">
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQKK6WYJNV"></script>
 <script>
-const CheeseImg = document.querySelector('.img');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-const Cheese = parseInt(localStorage.getItem('Cheese')) || 0;
-const ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
-let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
+  gtag('config', 'G-QQKK6WYJNV');
+</script>
 
+<title>Cheese Clicker</title>
+<p class="counter" id="variable-value" style="font-family: Rockwell; text-align: center;"></p>
+<p class="counter" id="ClickBooster" style="font-family: Rockwell; text-align: center;"></p>
+<br>
+<br>
+<img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()" class="img-2">
+<img class="upgrade" src="assets/Upgrade-1.png" onclick="Upgrade1()" id="upgrade"> <script>
   function CheeseClicked() {
-  Cheese += ClickBoost;
-  updateDisplay(); // Add this line to update counters after clicking
-}
+    const CheeseImg = document.querySelector('.img');
+    setTimeout(() => {
+      CheeseImg.classList.remove('clicked');
+    }, 300);
 
+    Cheese += ClickBoost;
+    localStorage.setItem('Cheese', Cheese);
+    localStorage.setItem('ClickBoost', ClickBoost);
+      
+    
+    updateDisplay();
+  }
 
-
+  let Cheese = parseInt(localStorage.getItem('Cheese')) || 0;
+  let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
+  let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
 
   function updateDisplay() {
     const displayElement = document.getElementById("variable-value");
@@ -46,32 +38,30 @@ let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
     const ClickBooster = document.getElementById("ClickBooster");
     ClickBooster.textContent = "Click Boost: " + ClickBoost;
     localStorage.setItem('Upgrade1', Upgrade1);
-    localStorage.setItem('Cheese', Cheese);
-    localStorage.setItem('ClickBoost', ClickBoost);
   }
 
-
-updateDisplay(); // Initial display update
+  updateDisplay();
 
 if (Upgrade1 === 1) {
-  document.getElementById('upgrade').style.display = 'none'; // Hide upgrade if purchased
+  document.getElementById('upgrade').style.display = 'none'; // Hide the element
 }
 
-function Upgrade1() {
-  if (Upgrade1 === 0 && Cheese >= 100) {
-    Upgrade1++;
-    Cheese -= 100;
+  
+  function Upgrade1() {
+  if (Upgrade1 === 0 && Cheese >= 100) { // Added check for U1
+    document.getElementById('upgrade').style.display = 'none';
     ClickBoost++;
-    localStorage.setItem('Cheese', Cheese);
-    localStorage.setItem('Upgrade1', Upgrade1);
+    Cheese -= 100;
     updateDisplay();
-    document.getElementById('upgrade').style.display = 'none'; // Hide upgrade after purchase
-  } else if (Cheese < 100) {
-    alert("Not enough Cheese, keep on clickin!");
   } else {
-    // Handle scenario where cheese is enough but upgrade already purchased
-    // (you can display a message or provide options here)
-    console.log("Upgrade already purchased!");
+    if (Cheese < 100) { // Specific message for insufficient cheese
+      alert("Not enough Cheese, keep on clickin!");
+    } else { // If Cheese is enough but U1 is not 0
+      // Handle the scenario where U1 is not 0 but Cheese is sufficient
+      // You could display a different message or provide options.
+    }
   }
 }
 </script>
+
+  
