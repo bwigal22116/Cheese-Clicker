@@ -13,7 +13,8 @@
 <br>
 <br>
 <img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()" class="img-2">
-<img class="upgrade" src="assets/Upgrade-1.png" onclick="Upgrade1()" id="upgrade"> <script>
+<img class="upgrade" src="assets/Upgrade-1.png" onclick="Upgrade1()" id="upgrade">
+<script>
   function CheeseClicked() {
     const CheeseImg = document.querySelector('.img');
     setTimeout(() => {
@@ -30,7 +31,7 @@
   }
 
   <link rel="stylesheet" href="index.css">
-    
+    <script>
   let Cheese = parseInt(localStorage.getItem('Cheese')) || 0;
   let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
   let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
