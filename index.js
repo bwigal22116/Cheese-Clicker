@@ -5,7 +5,6 @@ const ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
 let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
 
   function CheeseClicked() {
-
   Cheese += ClickBoost;
   updateDisplay(); // Add this line to update counters after clicking
 }
