@@ -1,103 +1,28 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQKK6WYJNV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QQKK6WYJNV');
-</script>
-
-<title>Cheese Clicker</title>
-<p class="counter" id="variable-value" style="font-family: Rockwell; text-align: center;"></p>
-<p class="counter" id="ClickBooster" style="font-family: Rockwell; text-align: center;"></p>
-<br>
-<br>
-<img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()" class="img-2">
-<img class="upgrade" src="assets/Upgrade-1.png" onclick="Upgrade1()" id="upgrade"> <script>
-  function CheeseClicked() {
-    const CheeseImg = document.querySelector('.img');
-    setTimeout(() => {
-      CheeseImg.classList.remove('clicked');
-    }, 300);
-
-    Cheese += ClickBoost;
-    localStorage.setItem('Cheese', Cheese);
-    localStorage.setItem('ClickBoost', ClickBoost);
-      
-    
-    updateDisplay();
-  }
-
-  let Cheese = parseInt(localStorage.getItem('Cheese')) || 0;
-  let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
-  let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
-
-  function updateDisplay() {
-    const displayElement = document.getElementById("variable-value");
-    displayElement.textContent = Cheese;
-    const ClickBooster = document.getElementById("ClickBooster");
-    ClickBooster.textContent = "Click Boost: " + ClickBoost;
-    localStorage.setItem('Upgrade1', Upgrade1);
-  }
-
-  updateDisplay();
-
-if (Upgrade1 === 1) {
-  document.getElementById('upgrade').style.display = 'none'; // Hide the element
-}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheese Clicker</title>
   
-  function Upgrade1() {
-  if (Upgrade1 === 0 && Cheese >= 100) { // Added check for U1
-    document.getElementById('upgrade').style.display = 'none';
-    ClickBoost++;
-    Cheese -= 100;
-    updateDisplay();
-  } else {
-    if (Cheese < 100) { // Specific message for insufficient cheese
-      alert("Not enough Cheese, keep on clickin!");
-    } else { // If Cheese is enough but U1 is not 0
-      // Handle the scenario where U1 is not 0 but Cheese is sufficient
-      // You could display a different message or provide options.
-    }
-  }
-}
-</script>
+</head>
+<body>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQKK6WYJNV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QQKK6WYJNV');
+  </script>
 
-  
-<style>
-  .upgrade {
-     position: absolute;
-    top: 0;
-    right: 0;
-  
-  }
-  body {
-    background-color: #fffeb3;
-  }
-  
-  img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centers the image within its container */
-  width: 275px;
-  height: auto;
-  transition: transform 0.2s ease-in-out; /* Retains the smooth animation */
-}
+  <p class="counter" id="variable-value" style="font-family: Rockwell; text-align: center;"></p>
+  <p class="counter" id="ClickBooster" style="font-family: Rockwell; text-align: center;"></p>
+  <br>
+  <br>
+  <img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()">
+  <img class="upgrade" src="assets/Upgrade-1.png" onclick="Upgrade1()" id="upgrade">
+</body>
+</html>
+<link rel="stylesheet" href="index.css">
 
-
-img.clicked {
-  transform: scale(1.2); /* Scale the image up when clicked */
-}
-
-  .img {
-  margin: 0 auto;
-  width: 300px;
-  height: auto;
-}
-
-.counter {
-  font-size: 60px;
-}
-</style>
+<script src="index.js"></script>
