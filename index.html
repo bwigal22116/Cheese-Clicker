@@ -30,7 +30,7 @@
 
   let Cheese = parseInt(localStorage.getItem('Cheese')) || 0;
   let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
-  let U1 = parseInt(localStorage.getItem('U1')) || 0;
+  let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
 
   function updateDisplay() {
     const displayElement = document.getElementById("variable-value");
@@ -42,13 +42,13 @@
 
   updateDisplay();
 
-if (typeof U1 === 'number' && U1 === 1 && document.getElementById('upgrade')) {
+if (Upgrade1 === 0) {
   document.getElementById('upgrade').style.display = 'none'; // Hide the element
 }
 
   
   function Upgrade1() {
-  if (U1 === 0 && Cheese >= 100) { // Added check for U1
+  if (Upgrade1 === 0 && Cheese >= 100) { // Added check for U1
     document.getElementById('upgrade').style.display = 'none';
     ClickBoost++;
     Cheese -= 100;
