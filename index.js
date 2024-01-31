@@ -13,11 +13,17 @@ let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
 
 
 
-function updateDisplay() {
-  const displayElement = document.getElementById("variable-value");
-  displayElement.textContent = Cheese;
-  document.getElementById("ClickBooster").textContent = "Click Boost: " + ClickBoost;
-}
+
+  function updateDisplay() {
+    const displayElement = document.getElementById("variable-value");
+    displayElement.textContent = Cheese;
+    const ClickBooster = document.getElementById("ClickBooster");
+    ClickBooster.textContent = "Click Boost: " + ClickBoost;
+    localStorage.setItem('Upgrade1', Upgrade1);
+    localStorage.setItem('Cheese', Cheese);
+    localStorage.setItem('ClickBoost', ClickBoost);
+  }
+
 
 updateDisplay(); // Initial display update
 
