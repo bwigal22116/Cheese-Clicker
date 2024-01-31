@@ -7,7 +7,6 @@ let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
   function CheeseClicked() {
 
   Cheese += ClickBoost;
-  localStorage.setItem('Cheese', Cheese);
   updateDisplay(); // Add this line to update counters after clicking
 }
 
