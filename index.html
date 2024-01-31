@@ -41,9 +41,12 @@
   }
 
   updateDisplay();
-  if (U1 === 1) {
-  document.getElementById('upgrade').style.display = 'none';
-  }
+
+if (typeof U1 === 'number' && U1 === 1 && document.getElementById('upgrade')) {
+  document.getElementById('upgrade').style.display = 'none'; // Hide the element
+}
+
+  
   function Upgrade1() {
   if (U1 === 0 && Cheese >= 100) { // Added check for U1
     document.getElementById('upgrade').style.display = 'none';
