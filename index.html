@@ -42,6 +42,8 @@
     if (Cheese >= 100) { // Capitalized "Cheese"
       document.getElementById('upgrade').style.display = 'none';
       ClickBoost++;
+      Cheese-= 100
+      updateDisplay();
     } else {
       alert("Not enough Cheese, keep on clickin!");
     }
