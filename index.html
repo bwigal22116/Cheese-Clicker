@@ -1,4 +1,3 @@
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQKK6WYJNV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,57 +12,42 @@
 <p class="counter" id="ClickBooster" style="font-family: Rockwell; text-align: center;"></p>
 <br>
 <br>
-<!-- Img Show -->
- <img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()" class="img-2">
-<img class="upgrade" src="assets/Upgrade-1.png" onclick="Upgrade1()" class="upgrade">
-
-<!-- Scripts -->
-<script>
-  
+<img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()" class="img-2">
+<img class="upgrade" src="assets/Upgrade-1.png" onclick="Upgrade1()" id="upgrade"> <script>
   function CheeseClicked() {
-  const CheeseImg = document.querySelector('.img');
-  setTimeout(() => {
-    CheeseImg.classList.remove('clicked'); // Remove the class after a short delay
-  }, 300);
+    const CheeseImg = document.querySelector('.img');
+    setTimeout(() => {
+      CheeseImg.classList.remove('clicked');
+    }, 300);
 
-  Cheese += ClickBoost; // Increment the pizza count
-  localStorage.setItem('Cheese', Cheese);
-  localStorage.setItem('ClickBoost', ClickBoost);
+    Cheese += ClickBoost;
+    localStorage.setItem('Cheese', Cheese);
+    localStorage.setItem('ClickBoost', ClickBoost);
     updateDisplay();
-    
-  
-}
+  }
 
-let Cheese = parseInt(localStorage.getItem('Cheese')) || 0; 
-let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1; 
-  
-function updateDisplay() {
-  const displayElement = document.getElementById("variable-value");
-  displayElement.textContent = Cheese;
-  const ClickBooster = document.getElementById("ClickBooster");
-  ClickBooster.textContent = "Click Boost: " + ClickBoost;
-  
-  
-}
+  let Cheese = parseInt(localStorage.getItem('Cheese')) || 0;
+  let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
+
+  function updateDisplay() {
+    const displayElement = document.getElementById("variable-value");
+    displayElement.textContent = Cheese;
+    const ClickBooster = document.getElementById("ClickBooster");
+    ClickBooster.textContent = "Click Boost: " + ClickBoost;
+  }
+
   updateDisplay();
 
-  function Upgrade1 {
-  if (cheese >= 100) {
-    document.getElementById('upgrade').style.display = 'none';
-    ClickBoost++; // Increases ClickBoost by 1
-  } else {
-    alert("Not enough Cheese, keep on clickin!")
-    // Handle scenario where cheese is less than 100 (optional)
-    // You could display a message, disable the click, etc.
+  function Upgrade1() { // Added parentheses for function declaration
+    if (Cheese >= 100) { // Capitalized "Cheese"
+      document.getElementById('upgrade').style.display = 'none';
+      ClickBoost++;
+    } else {
+      alert("Not enough Cheese, keep on clickin!");
+    }
   }
-  }
-});
-  
-    
+</script>
 
-  
-  
-  </script>
   
 <style>
   upgrade {
