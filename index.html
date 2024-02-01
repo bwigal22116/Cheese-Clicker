@@ -16,10 +16,6 @@
 
 <script>
   function CheeseClicked() { // Ensure correct function declaration
-  const CheeseImg = document.querySelector('.img');
-  setTimeout(() => {
-    CheeseImg.classList.remove('clicked');
-  }, 300);
 
   Cheese += ClickBoost;
   localStorage.setItem('Cheese', Cheese);
@@ -32,38 +28,22 @@
     
   let Cheese = parseInt(localStorage.getItem('Cheese')) || 0;
   let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
-  let Upgrade1 = parseInt(localStorage.getItem('Upgrade1')) || 0;
+  
 
   function updateDisplay() {
     const displayElement = document.getElementById("variable-value");
     displayElement.textContent = Cheese;
     const ClickBooster = document.getElementById("ClickBooster");
     ClickBooster.textContent = "Click Boost: " + ClickBoost;
-    localStorage.setItem('Upgrade1', Upgrade1);
+    
   }
 
   updateDisplay();
 
-if (Upgrade1 === 1) {
-  document.getElementById('upgrade').style.display = 'none'; // Hide the element
-}
+
 
   
-  function Upgrade1() {
-  if (Upgrade1 === 0 && Cheese >= 100) { // Added check for U1
-    document.getElementById('upgrade').style.display = 'none';
-    ClickBoost++;
-    Cheese -= 100;
-    updateDisplay();
-  } else {
-    if (Cheese < 100) { // Specific message for insufficient cheese
-      alert("Not enough Cheese, keep on clickin!");
-    } else { // If Cheese is enough but U1 is not 0
-      // Handle the scenario where U1 is not 0 but Cheese is sufficient
-      // You could display a different message or provide options.
-    }
-  }
-}
+  
 </script>
 
   
