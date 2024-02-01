@@ -15,20 +15,18 @@
 <img class="img" src="assets/IMG_3721-removebg-preview.png" onclick="CheeseClicked()" class="img-2">
 <img class="upgrade" src="assets/Upgrade-1.png" onclick="Upgrade1()" id="upgrade">
 <script>
-  function CheeseClicked() {
-    const CheeseImg = document.querySelector('.img');
-    setTimeout(() => {
-      CheeseImg.classList.remove('clicked');
-    }, 300);
+  function CheeseClicked() { // Ensure correct function declaration
+  const CheeseImg = document.querySelector('.img');
+  setTimeout(() => {
+    CheeseImg.classList.remove('clicked');
+  }, 300);
 
-    Cheese += ClickBoost;
-    localStorage.setItem('Cheese', Cheese);
-    localStorage.setItem('ClickBoost', ClickBoost);
-      
-    
-    updateDisplay();
-    
-  }
+  Cheese += ClickBoost;
+  localStorage.setItem('Cheese', Cheese);
+  localStorage.setItem('ClickBoost', ClickBoost);
+
+  updateDisplay();
+}
 
 
     
