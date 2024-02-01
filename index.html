@@ -16,7 +16,7 @@
 
 <script>
   function CheeseClicked() { // Ensure correct function declaration
-  console.log("The Cheese Was Clicked!");
+  console.log(M1)
   Cheese += ClickBoost;
   localStorage.setItem('Cheese', Cheese);
   localStorage.setItem('ClickBoost', ClickBoost);
@@ -29,7 +29,7 @@
   let Cheese = parseInt(localStorage.getItem('Cheese')) || 0;
   let ClickBoost = parseInt(localStorage.getItem('ClickBoost')) || 1;
   let U1 = parseInt(localStorage.getItem('U1')) || 0;
-
+  let M1 = "Cheese Was Clicked | Dev Logs"
   function updateDisplay() {
     const displayElement = document.getElementById("variable-value");
     displayElement.textContent = Cheese;
