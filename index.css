@@ -38,14 +38,9 @@ img.clicked {
   font-size: 60px;
 }
 
-.Shop1 { 
-position: absolute;
-right: 0px;
-bottom: 0px;
-}
-
-.shop { 
-position: absolute;
-right: 0px;
-bottom: 0px;
+.Shop1 {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  display: block; 
 }
