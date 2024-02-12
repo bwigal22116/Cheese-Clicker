@@ -38,6 +38,12 @@ img.clicked {
   font-size: 60px;
 }
 
-.Shop1 {
-    
+.Shop1 { 
+    position: relative; /* Container needs to be relatively positioned */
+}
+
+.Shop1 img {
+    position: absolute; 
+    bottom: 0;      /* Stick to the bottom */
+    right: 0;       /* Stick to the right */
 }
