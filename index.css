@@ -8,15 +8,14 @@
     background-color: #fffeb3;
   }
 
-.Shop1 {
-  position: fixed; 
-  right: 0px;
-  bottom: 0px;
-  font-size: 40px;
-  max-width: 80%; /* Example to prevent going off the right edge */
-  max-height: 70%; /* Example to prevent going off the bottom */
-}
 
+
+.Shop1 {
+    position: fixed; 
+    right: 10px;     
+    bottom: 10px;   
+    font-size: 40px; 
+}
 
 
   img {
