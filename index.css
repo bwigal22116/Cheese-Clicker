@@ -39,7 +39,7 @@ img.clicked {
 }
 
 .Shop1 { 
-    position: relative; /* Container needs to be relatively positioned */
-    bottom: 0;      /* Stick to the bottom */
-    right: 0;       /* Stick to the right */
+    position:fixed;
+    right:10px;
+    bottom: 10px 
 }
